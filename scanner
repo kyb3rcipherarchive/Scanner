@@ -1,0 +1,54 @@
+#!/bin/bash
+
+#Colours
+greenColour="\e[0;32m\033[1m"
+endColour="\033[0m\e[0m"
+redColour="\e[0;31m\033[1m"
+blueColour="\e[0;34m\033[1m"
+yellowColour="\e[0;33m\033[1m"
+purpleColour="\e[0;35m\033[1m"
+turquoiseColour="\e[0;36m\033[1m"
+grayColour="\e[0;37m\033[1m"
+
+##Funciones#########
+
+##Ayuditaxd(h) 
+function ayuda(){
+	echo  -e "\n${redColour}[*]Modos: -a[Rápido] -b[Detallado] -c[Agresivo][*]${endColour}" 2>/dev/null 
+        echo -e "\n${blueColour}[*]Uso:sudo ./script [-a][-b][-c] <IP> [*]${endColour}" 2>/dev/null
+ 
+}       
+
+##fast (a)
+function fast(){
+	nmap --min-rate 5000 -p- $fast -Pn -n -oN fastscan
+	echo -e "\n${greenColour}[*]Hecho!. . . [*]${endColour}" 
+}
+
+##detailed 
+function detailed(){
+	nmap --min-rate 5000 -p- $detailed -sCV -Pn -n -oN detailedscan
+	echo -e "\n${yellowColour}[*]Hecho!. . . [*]${endColour}" 
+}
+
+##steal+detailed
+function stealdetail(){
+	sudo nmap --min-rate 5000 -p- $steal -sCV -sS -Pn -n -oN hardscan -Pn 
+	echo -e "\n${redColour}[*]Hecho!. . . [*]${endColour}" 
+}
+
+##Main 
+
+counter=0 ; while getopts "a:b:c:h:" opt;
+do
+
+	case $opt in 
+		h)ayuda=$OPTARG; let counter+=1 ; if [[ $counter == 1 ]]; then ayuda;  fi ;;
+
+		a)fast=$OPTARG; let counter+=2 ; if [[ $counter == 2 ]] ; then fast; fi ;;
+
+		b)detailed=$OPTARG; let counter+=3 ; if [[ $counter == 3 ]] ; then detailed ; fi ;;
+
+		c)steal=$OPTARG; let counter+=4 ; if [[ $counter == 4 ]] ; then stealdetail ; fi ;;
+	esac
+done
