@@ -1,25 +1,31 @@
-# CTF-Scanner
-Scanner for ctfs
+# CTF Scanner
+
+## Scanner for CTFs
 
 Install:
+```bash
+git clone https://github.com/s4orii/CTF-Scanner.git
+cd CTF-Scanner
+sudo make install
+cd ..
+rm -rf CTF-Scanner
+```
 
-1.- git clone 
+Unistall:
+```bash
+git clone https://github.com/s4orii/CTF-Scanner.git
+cd CTF-Scanner
+sudo make unistall
+```
 
+## Use: 
 
-2.- chmod +x scanner.sh
+```console
+scanner <Mode> <IP>
+```
 
+Modes:
 
-3.- ./scanner [-a | -b | -c ] <ip> 
-
-
-
-Use: 
-
-
-[*]Modos: -a[Rápido/fast] -b[Detallado/Detailed] -c[Agresivo/Aggresive][*]
-
-
-[*]Uso:sudo ./script [-a][-b][-c] <IP> [*]
-
-@s4ori
-        
+* Fast (**-f**)
+* Detailed (**-d**)
+* Aggresive (**-a**)
