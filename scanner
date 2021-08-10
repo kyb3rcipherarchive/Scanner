@@ -30,7 +30,7 @@ function banner(){
 	echo -e "${redColour}  ░░░░░░░░███░███ ░░░   ███████  ░███ ░███  ░███ ░███ ░███████  ░███ ░░░  "
 	echo -e "${redColour}  ███    ░███░███  ███ ███░░███  ░███ ░███  ░███ ░███ ░███░░░   ░███      "
 	echo -e "${redColour} ░░█████████ ░░██████ ░░████████ ████ █████ ████ █████░░██████  █████     "
-	echo -e "${redColour}  ░░░░░░░░░   ░░░░░░   ░░░░░░░░ ░░░░ ░░░░░ ░░░░ ░░░░░  ░░░░░░  ░░░░░      ${purpleColour}by: ${yellowColour}@s4ori @kyb3rvizsla"
+	echo -e "${redColour}  ░░░░░░░░░   ░░░░░░   ░░░░░░░░ ░░░░ ░░░░░ ░░░░ ░░░░░  ░░░░░░  ░░░░░      ${purpleColour}by: ${yellowColour}@kyb3rvizsla @s4ori"
 	echo "                                                                                      "
 
 	echo -e "\n${yellowColour}Use:"
