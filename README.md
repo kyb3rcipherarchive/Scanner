@@ -24,6 +24,11 @@ sudo make unistall
 scanner <Mode> <IP>
 ```
 
+Or in offline mode (not clonning repo):
+```shell
+curl https://raw.githubusercontent.com/kyb3rvizsla/Scanner/main/scanner | bash
+```
+
 Modes:
 
 * Fast (**-f**)
